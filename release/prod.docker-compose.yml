@@ -3,6 +3,8 @@ services:
     build:
       context: ..
       dockerfile: release/prod.Dockerfile
+      args:
+        VITE_AH_EPOCH: ${VITE_AH_EPOCH}
     restart: always
     labels:
       traefik.enable: true
