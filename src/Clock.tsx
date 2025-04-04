@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Clock.css";
 
 type Props = {
   AHEpoch: number;
@@ -11,11 +12,7 @@ const Clock = ({ AHEpoch }: Props) => {
     setTime(AHTime + 1);
   }, 1000);
 
-  return (
-    <div>
-      <p>{AHTime}</p>
-    </div>
-  );
+  return <p id="clock">{AHTime}</p>;
 };
 
 export default Clock;
