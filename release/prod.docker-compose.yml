@@ -1,0 +1,19 @@
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: release/prod.Dockerfile
+    restart: always
+    labels:
+      traefik.enable: true
+      traefik.docker.network: "traefik"
+      traefik.http.routers.web.rule: Host(`ah.reversed-r.dev`)
+      traefik.http.routers.web.entrypoints: websecure,web
+      traefik.http.routers.web.tls.certResolver: leresolver
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    name: traefik
+    external: true
