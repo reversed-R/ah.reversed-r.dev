@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <Clock AHEpoch={0} />
+      <Clock AHEpoch={Date.parse(import.meta.env.VITE_AH_EPOCH)} />
     </>
   );
 }

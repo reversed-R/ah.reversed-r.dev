@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Clock = ({ AHEpoch }: Props) => {
-  const [AHTime, setTime] = useState(new Date().getTime() - AHEpoch);
+  const [AHTime, setTime] = useState(Math.floor((Date.now() - AHEpoch) / 1000));
 
   setTimeout(() => {
     setTime(AHTime + 1);
